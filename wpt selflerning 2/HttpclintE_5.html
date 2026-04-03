@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live News Headlines</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<h2 align="center">Live News Headlines</h2>
+<ul id="newsList"></ul>
+<script>
+function loadNews() {
+    axios.get("https://jsonplaceholder.typicode.com/posts")
+        .then(function(response) {
+
+            let news = response.data;
+            let output = "";
+            news.slice(0, 10).forEach(item => {
+                output += `<li>${item.title}</li>`;
+            });
+
+            document.getElementById("newsList").innerHTML = output;
+        })
+        .catch(function(error) {
+            console.log("Error:", error);
+        });
+}
+window.onload = loadNews;
+</script>
+
+</body>
+</html>

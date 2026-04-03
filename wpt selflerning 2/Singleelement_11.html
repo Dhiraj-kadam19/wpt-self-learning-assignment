@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Single Element</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h2>List of Items</h2>
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+</ul>
+<button id="btn">Get 2nd Item</button>
+<p id="result"></p>
+<script>
+$(document).ready(function(){
+
+    $("#btn").click(function(){
+        let element = $("li").eq(1).text();
+
+        $("#result").text("Selected Element: " + element);
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{
+  "matchDetails": {
+    "match": "India vs Australia",
+    "venue": "Wankhede Stadium",
+    "date": "2026-03-29"
+  },
+
+  "teams": [
+    {
+      "name": "India",
+      "score": 280,
+      "wickets": 6,
+      "overs": 50,
+      "players": [
+        {
+          "name": "Rohit Sharma",
+          "runs": 85,
+          "balls": 60
+        },
+        {
+          "name": "Virat Kohli",
+          "runs": 72,
+          "balls": 65
+        }
+      ]
+    },
+    {
+      "name": "Australia",
+      "score": 250,
+      "wickets": 8,
+      "overs": 50,
+      "players": [
+        {
+          "name": "Steve Smith",
+          "runs": 90,
+          "balls": 80
+        },
+        {
+          "name": "David Warner",
+          "runs": 50,
+          "balls": 45
+        }
+      ]
+    }
+  ],
+
+  "result": "India won by 30 runs"
+}

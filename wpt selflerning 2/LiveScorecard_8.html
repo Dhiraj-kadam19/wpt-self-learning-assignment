@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Scoreboard</title>
+</head>
+<body>
+
+<h2 align="center">Live Scoreboard</h2>
+
+<table border="1" align="center" cellpadding="10">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody id="data"></tbody>
+</table>
+
+<script>
+function loadData() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://jsonplaceholder.typicode.com/todos", true);
+
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            let result = JSON.parse(xhr.responseText);
+
+            let output = "";
+            result.slice(0, 10).forEach(item => {
+                output += `
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${item.title}</td>
+                        <td>${item.completed}</td>
+                    </tr>
+                `;
+            });
+
+            document.getElementById("data").innerHTML = output;
+        }
+    };
+
+    xhr.send();
+}
+window.onload = loadData;
+</script>
+
+</body>
+</html>
